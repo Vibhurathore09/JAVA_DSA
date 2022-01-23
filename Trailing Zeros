@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class Trailing_zeros {
+    public static void main(String[] args) {
+        int n;
+        Scanner sc = new Scanner(System.in);
+        n = sc.nextInt();
+        int fact = 1;
+        for(int i=n;i>0;i--)
+        {
+            fact = fact *i;
+        }
+        String s = fact+"";
+        char []str = s.toCharArray();
+        boolean b = true;
+        int i=str.length,count =0;
+        while(b)
+        {
+            if(str[i-1]=='0')
+            {
+                count++;
+                i--;
+            }
+            else
+            {
+                b = false;
+            }
+        }
+        System.out.println("No of trailing zeros -> "+count);
+    }
+}
