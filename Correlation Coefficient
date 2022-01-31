@@ -28,8 +28,8 @@ public class Correlation_Coefficent {
             xy+= x[i]*y[i];
         }
         int r1 = (n*xy) - (sum_x*sum_y);
-        int r2 = (int) (Math.sqrt((n*d_x) -Math.pow(sum_x,2))*Math.sqrt((n*d_y) -Math.pow(sum_y,2)));
-        int r =  (r1/r2);
+        float r2 =(float) (Math.sqrt((n*d_x) -Math.pow(sum_x,2))*Math.sqrt((n*d_y) -Math.pow(sum_y,2)));
+        float r =  (r1/r2);
         System.out.println("sum of x-> "+sum_x);
         System.out.println("sum of y-> "+sum_y);
         System.out.println("sum of x^2-> "+d_x);
