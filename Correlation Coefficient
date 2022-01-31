@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class Correlation_Coefficent {
+    public static void main(String[] args) {
+        Scanner sc=  new Scanner(System.in);
+        System.out.println("Enter no of inputs");
+        int n = sc.nextInt();
+        int x[] = new int[n];
+        int y[] = new int[n];
+        int sum_x = 0,sum_y=0;
+        int d_x=0 , d_y=0,xy=0;
+        System.out.println("Enter values of x");
+        for(int i=0;i<n;i++)
+        {
+            x[i] = sc.nextInt();
+            sum_x+=x[i];
+            d_x+=x[i]*x[i];
+        }
+        System.out.println("Enter values of y");
+        for(int i=0;i<n;i++)
+        {
+            y[i] = sc.nextInt();
+            sum_y+=y[i];
+            d_y+=y[i]*y[i];
+        }
+        for(int i=0;i<n;i++)
+        {
+            xy+= x[i]*y[i];
+        }
+        int r1 = (n*xy) - (sum_x*sum_y);
+        int r2 = (int) (Math.sqrt((n*d_x) -Math.pow(sum_x,2))*Math.sqrt((n*d_y) -Math.pow(sum_y,2)));
+        int r =  (r1/r2);
+        System.out.println("sum of x-> "+sum_x);
+        System.out.println("sum of y-> "+sum_y);
+        System.out.println("sum of x^2-> "+d_x);
+        System.out.println("sum of y^2-> "+d_y);
+        System.out.println("sum of x*y-> "+xy);
+        System.out.println("Correlation coefficent -> "+ r1 +" "+r2 +" "+r);
+    }
+}
